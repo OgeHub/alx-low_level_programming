@@ -8,24 +8,22 @@ int main(void)
 {
 	int l;
 	int m;
-	int n;
 
-	for (l = 0; l < 8; l++)
+	for (l = 0; l < 99; l++)
 	{
-		for (m = l + 1; m < 9; m++)
+		for (m = l + 1; m < 100; m++)
 		{
-			for (n = m + 1; n < 10; n++)
-			{
-				putchar((l % 10) + '0');
-				putchar((m % 10) + '0');
-				putchar((n % 10) + '0');
-			if (l == 7 && m == 8 && n == 9)
+			putchar((l / 10) + '0');
+			putchar((l % 10) + '0');
+			putchar(' ');
+			putchar((m / 10) + '0');
+			putchar((m % 10) + '0');
+			if (l == 98 && m == 99)
 			{
 				break;
 			}
 			putchar(',');
 			putchar(' ');
-			}
 		}
 
 	}
