@@ -2,8 +2,8 @@
 
 /**
  * main - Entry point
- * prints lowercase alphabets
- * Return: Always 0 (Success)
+ * Print lowercase alphabet
+ * Return: Always 0 (Succes)
  */
 int main(void)
 {
@@ -14,5 +14,5 @@ int main(void)
 		putchar(alphabet);
 	};
 	putchar('\n');
-	return 0;
+	return (0);
 }
