@@ -2,22 +2,21 @@
 
 /**
  * main - Entry point
- * Print lowercase and uppercase letters
- * Return: Always 0 (Succcess)
+ * print lowercase and uppercase letter
+ * Return: Always 0 (Success)
  */
 int main(void)
 {
-	char lowercase_letter;
-	char uppercase_letter;
+	char alphabet;
 
-	for (lowercase_letter = 'a'; lowercase_letter <= 'z'; lowercase_letter++)
+	for (alphabet = 'a'; alphabet <= 'z'; alphabet++)
 	{
-		putchar(lowercase_letter);
-	};
-	for (uppercase_letter = 'A'; (uppercase_letter = 'Z'); uppercase_letter++)
+		putchar(alphabet);
+	}
+	for (alphabet = 'A'; alphabet <= 'Z'; alphabet++)
 	{
-		putchar(uppercase_letter);
-	};
-	putchar('\n');
+		putchar(alphabet);
+	}
+	putchar(alphabet);
 	return (0);
 }
