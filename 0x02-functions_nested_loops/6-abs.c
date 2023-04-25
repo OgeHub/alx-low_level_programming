@@ -15,6 +15,10 @@ int _abs(int n)
 	{
 		result = n;
 	}
+	else if (n == 0)
+	{
+		result = 0;
+	}
 	else if (n < 0)
 	{
 		result = -1 * n;
