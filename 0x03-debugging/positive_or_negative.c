@@ -3,21 +3,19 @@
 #include <stdio.h>
 
 /**
- *positive_or_negative - Entry point
- *Print random numbers
- *Return: Always 0 (Success)
+ * positive_or_negative - Entry point
+ * Checks number
  */
-int positive_or_negative(int n)
+void positive_or_negative(int i)
 {
-	if (n > 0)
+	if (i > 0)
 	{
-		printf("%d is positive\n", n);
-	} else if (n == 0)
+		printf("%d is positive\n", i);
+	} else if (i == 0)
 	{
-		printf("%d is zero\n", n);
-	} else if (n < 0)
+		printf("%d is zero\n", i);
+	} else if (i < 0)
 	{
-		printf("%d is negative\n", n);
+		printf("%d is negative\n", i);
 	}
-	return (0);
 }
