@@ -2,9 +2,10 @@
 #include "main.h"
 
 /**
- * print_line - entry point
+ * print_diagonal - entry point
  * @n: an integer
- * Function draws diagonal line
+ * Function that draws diagonal line
+ * Return: void
  */
 void print_diagonal(int n)
 {
