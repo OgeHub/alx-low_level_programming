@@ -3,8 +3,8 @@
 
 /**
  * main - entry point
- * @agrc: input 1
- * @agrv: input 2
+ * @argc: input 1
+ * @argv: input 2
  * Prints all arguements
  * Return: integer
  */
