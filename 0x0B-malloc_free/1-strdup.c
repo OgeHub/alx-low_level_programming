@@ -14,14 +14,15 @@ char *_strcpy(char *dest, char *src);
  */
 char *_strdup(char *str)
 {
-	int strlength = _strlen(str);
-	char *copy = (char*)malloc(sizeof(char) * strlength);
+	int strlength = _strlen(str) + 1;
+	char *copy = malloc(sizeof(char) * strlength);
 	if (str == NULL)
 	{
 		return (NULL);
 	}
 	_strcpy(copy, str);
-	return (str);
+	copy[strlength] = '\0';
+	return (copy);
 }
 
 /**
