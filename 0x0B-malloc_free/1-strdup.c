@@ -14,9 +14,15 @@ char *_strcpy(char *dest, char *src);
  */
 char *_strdup(char *str)
 {
-	int strlength = _strlen(str) + 1;
-	char *copy = malloc(sizeof(char) * strlength);
+	char *copy;
+	int strlength = _strlen(str);
+
 	if (str == NULL)
+	{
+		return (NULL);
+	}
+	copy = malloc(sizeof(char) * (strlength + 1));
+	if (copy == NULL)
 	{
 		return (NULL);
 	}
