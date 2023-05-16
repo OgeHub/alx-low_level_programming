@@ -2,6 +2,8 @@
 #include <stdlib.h>
 #include "main.h"
 
+int _strlen(char *s);
+char *_strcpy(char *dest, char *src);
 char *_strcat(char *dest, char *src);
 
 /**
@@ -13,10 +15,8 @@ char *_strcat(char *dest, char *src);
  */
 char *str_concat(char *s1, char *s2)
 {
-	char *ptr1;
-	char *ptr2;
 	char *str;
-	int i, strlent1, strlent2;
+	int strlent1, strlent2;
 
 	if (s1 == NULL)
 	{
@@ -26,26 +26,55 @@ char *str_concat(char *s1, char *s2)
 	{
 		s2 = "";
 	}
-	for (i = 0; s1[i]; i++)
-	{
-		strlent1++;
-	}
-	for (i = 0; s2[i]; i++)
-	{
-		strlent2++;
-	}
-	ptr1 = malloc(sizeof(char) * strlent1);
-	if (ptr1 == NULL)
+	strlent1 = _strlen(s1);
+	strlent2 = _strlen(s2);
+	str = malloc(sizeof(char) * (strlent1 + strlent2 + 1));
+	if (str == NULL)
 	{
 		return (NULL);
 	}
-	ptr2 = malloc(sizeof(char) * strlent2);
-	if (ptr2 == NULL)
-	{
-		return (NULL);
-	}
-	str = _strcat(ptr1, ptr2);
+	_strcpy(str, s1);
+	_strcat(str, s2);
 	return (str);
+}
+
+/**
+ * _strlen - length of string
+ * @s: character
+ * Function that finds length of string
+ * Return: integer
+ */
+int _strlen(char *s)
+{
+	int length = 0;
+
+	while (*s != '\0')
+	{
+		length++;
+		s++;
+	}
+	return (length);
+}
+
+/**
+ * *_strcpy - copy string
+ * @dest: input character
+ * @src: input character
+ * Fuction that copy string
+ * Return: string
+ */
+char *_strcpy(char *dest, char *src)
+{
+	char *start = dest;
+
+	while (*src != '\0')
+	{
+		*dest = *src;
+		dest++;
+		src++;
+	}
+	*dest = '\0';
+	return (start);
 }
 
 /**
