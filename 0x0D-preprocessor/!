@@ -1,0 +1,8 @@
+#include "main.h"
+
+int main()
+{
+	_putchar(_FILE_);
+
+	return (0);
+}
