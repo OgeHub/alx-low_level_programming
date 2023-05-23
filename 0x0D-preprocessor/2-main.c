@@ -1,8 +1,13 @@
 #include "stdio.h"
 #include "main.h"
 
-int main()
+/**
+ * main - entry point
+ *
+ * Return: 0 for success
+ */
+int main(void)
 {
-	printf("%s\n",__FILE__);
+	printf("%s\n", __FILE__);
 	return (0);
 }
