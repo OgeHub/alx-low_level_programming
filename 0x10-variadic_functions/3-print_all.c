@@ -40,14 +40,14 @@ void print_all(const char * const format, ...)
 
 			case 's':
 				str = va_arg(items, char *);
-				if (str != NULL)
+				if (!str)
+					str = "(nil)";
 				printf("%s", str);
-				else
-				printf("(nil)");
 				break;
 
-				default:
-				break;
+			default:
+				i++;
+				continue;
 		}
 		if (format[i + 1] != '\0' && (format[i] == 'c' || format[i] == 'i' || format[i] == 'f' || format[i] == 's'))
 		{
