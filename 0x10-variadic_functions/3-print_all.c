@@ -19,36 +19,36 @@ void print_all(const char * const format, ...)
 
 	va_start(items, format);
 
-	while (format[i])
+	while (format[i] != '\0')
 	{
-		if (format[i] == 'c')
+		switch (format[i])
 		{
-			character = (char) va_arg(items, int);
-			printf("%c", character);
-		}
-		else if (format[i] == 'i')
-		{
-			integer = va_arg(items, int);
-			printf("%d", integer);
-		}
-		else if (format[i] == 'f')
-		{
-			floating = (float) va_arg(items, double);
-			printf("%f", floating);
-		}
-		else if (format[i] == 's')
-		{
-			str = va_arg(items, char *);
-			if (str != NULL)
-			{
-				printf("%s", str);
-			}
-			else
-			{
-				printf("(null)");
-			}
-		}
+			case 'c':
+				character = (char) va_arg(items, int);
+				printf("%c", character);
+				break;
 
+			case 'i':
+				integer = va_arg(items, int);
+				printf("%d", integer);
+				break;
+
+			case 'f':
+				floating = (float) va_arg(items, double);
+				printf("%f", floating);
+				break;
+
+			case 's':
+				str = va_arg(items, char *);
+				if (str != NULL)
+				printf("%s", str);
+				else
+				printf("(nil)");
+				break;
+
+				default:
+				break;
+		}
 		if (format[i + 1] != '\0' && (format[i] == 'c' || format[i] == 'i' || format[i] == 'f' || format[i] == 's'))
 		{
 			printf(", ");
