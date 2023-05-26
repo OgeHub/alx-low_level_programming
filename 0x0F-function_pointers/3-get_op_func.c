@@ -1,5 +1,5 @@
 #include "calc.h"
-#include 
+#include <stdlib.h>
 
 /**
  * get_op_func - function name
@@ -17,6 +17,13 @@ int (*get_op_func(char *s))(int, int)
 		{"%", op_mod},
 		{NULL, NULL}
 	};
-	int i;
-	if (
+
+	int i = 0;
+
+	while (ops[i].op != NULL && *(ops[i].op) != *s)
+	{
+		i++;
+	}
+
+	return (ops[i].f);
 }
