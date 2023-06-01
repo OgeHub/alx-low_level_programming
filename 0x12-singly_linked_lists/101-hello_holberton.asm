@@ -1,17 +1,16 @@
 section .data
-    format db "Hello, Holberton", 0
+    format db "Hello, Holberton", 10 ; 10 represents the newline character (\n)
 
 section .text
     global main
     extern printf
 
 main:
-    ; Push the format string address onto the stack
-    push format
+    ; Load the format string address into the first argument register (rdi)
+    mov rdi, format
+
     ; Call the printf function
     call printf
-    ; Clean up the stack after the function call
-    add rsp, 8
 
     ; Exit the program
     mov eax, 0
