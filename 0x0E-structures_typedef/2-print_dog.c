@@ -14,21 +14,15 @@ void print_dog(struct dog *d)
 
 	if (!(*d).name)
 	{
-		printf("Name: (nil)\n");
-	}
-	else if (!(*d).age)
-	{
-		printf("Age: (nil)\n");
+		(*d).name = "(nil)";
 	}
 	else if (!(*d).owner)
 	{
-		printf("Owner: (nil)\n");
+		(*d).owner = "(nil)";
 	}
 
-	if (d)
-	{
-		printf("Name: %s\n", (*d).name);
-		printf("Age: %f\n", (*d).age);
-		printf("Owner: %s\n", (*d).owner);
-	}
+
+	printf("Name: %s\n", (*d).name);
+	printf("Age: %f\n", (*d).age);
+	printf("Owner: %s\n", (*d).owner);
 }
